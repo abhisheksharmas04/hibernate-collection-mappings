@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ab.entity.StudentInfo" table="STUDENT_COLLECTION">
+        <id name="sno">
+            <generator class="increment"/>
+        </id>
+        <property name="sname" length="20"/>
+        <list name="friends" table="STUDENT_FRIENDS" cascade="all">
+            <key column="STUD_ID"></key>
+            <list-index base="0" column="INDEX"/>
+            <element column="FRIEND" length="20" type="String"/>
+        </list>
+        <set name="phoneNumbers" table="STUDENT_PHONE_NUMBERS">
+            <key column="STUD_ID"> </key>
+            <element column="PHONE_NUMBER" length="20" type="Long"></element>
+        </set>
+        <map name="idCertificates" table="STUDENT_ID_CERTIFICATE">
+            <key column="STUD_ID"/>
+            <map-key column="IDNAME" length="20" type="String"/>
+            <element column="ID_CERTIFICATE_NO" length="20" type="Long"></element>
+        </map>
+    </class>
+</hibernate-mapping>

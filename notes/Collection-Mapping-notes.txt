@@ -1,0 +1,22 @@
+Collection Mapping:
+	-> If the entity class is having collection type properties to hold bunch of values in seprate table having foriegn key base relationship with Primary/ parent table mapped with entity class.
+
+	-> We can take 3 types of collection propertie
+		(1) java.util.List.type
+		(2) java.util.Set.type
+		(3) java.util.Map.type
+
+	-> To configure the collection type properties in mapping file we take the support of collection tags like 
+	<list>/<bag>,<set>,<map>
+
+	-> @ElementCollection :: To enable collection mapping (alternate to <list>/<set>/<map>/<bag> tags)
+	-> @JoinColoum :: To specify FK Coloum (alternate to <key> tag)
+	-> @JoinTable :: To specify Child table (alternate to table attribute of <list>/<set>/<map>/<bag>)
+	-> @OrderColum :: To specify index column in list collection (alternate to List index coloum)
+	-> @ListIndexBase :: To sepcify base value to start in the index coloum (alternate to base attribute of List index coloum)
+	-> @MapKeyColumn :: To specify index coloum to hold key values in map collections (alternate to <map-key> tag)
+	------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	Registration No:A23933798756K
